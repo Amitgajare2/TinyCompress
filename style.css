@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  height: 100%;
+  --color: #E1E1E1;
+  background-color: #F3F3F3;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent),
+    linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%, transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%, transparent);
+  background-size: 55px 55px;
+}
+
+.container {
+  max-width: fit-content;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: white;
+}
+
+.container h1 {
+  font-family: "Oswald", serif;
+  margin-bottom: 20px;
+  font-size: 24px;
+  background: linear-gradient(to right, #09FF79, #42445A);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+input,
+select,
+button {
+  margin: 10px 0;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.preview-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.preview-box {
+  width: 48%;
+}
+
+.preview-label {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.preview-container img {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 10px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  margin: 10px 0;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.file-size {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  justify-content: space-between;
+}
+
+.download-button {
+  display: inline-block;
+  background-color: #2196F3;
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.download-button:hover {
+  background-color: #0b7dda;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.format-options {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.format-option {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.format-option.active {
+  background-color: #e7f3ff;
+  border-color: #2196F3;
+}
+
+.quality-slider {
+  width: 100%;
+}
+
+.quality-value {
+  text-align: center;
+  font-weight: bold;
+}
+
+.info {
+  margin-top: 20px;
+  padding: 19px;
+  background-color: #e7f3ff;
+  border-radius: 5px;
+  font-size: 14px;
+  
+}
+
+.drop-zone {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+  
+  .preview-container,
+  .settings-grid {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+  }
+  
+  .preview-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-size: 10px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-family: "Atkinson Hyperlegible Next", serif;
+}
+
+.faq {
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.faq h2 {
+  margin-top: 20px;
+  font-family: "Oswald", serif;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, blue, #42445A);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 15px;
+  font-family: "Atkinson Hyperlegible Next", serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.faq-item h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.faq-item p {
+  color: #666;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}

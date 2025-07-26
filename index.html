@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Compress and resize images online for free with TinyCompress. Reduce image file size without losing quality">
+  <meta name="keywords" content="Image compressor, compress images online, resize images, reduce image size, image optimization, free image compressor">
+  <meta name="author" content="Amit Gajare">
+  <meta name='copyright' content='Amit Gajare'>
+  <meta name='robots' content='index,follow'>
+  <meta name='og:title' content='Free image compressor'>
+  <meta name='og:type' content='Image compressor'>
+  <meta name='og:image' content='https://dl.dropbox.com/scl/fi/870vo5e7brq4tg22lmmpl/preview.jpg?rlkey=smarl3qj8t87qd4pil0tkll8g&st=xjzw31ee&dl=0'>
+  <meta name='og:site_name' content='TinyCompress'>
+  <meta name='og:description' content='Reduce image file size without losing quality, customize dimensions, and download optimized images instantly.'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyCompress</title>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Free image compressor</h1>
+    
+    <!-- File Input -->
+    <div class="drop-zone" id="dropZone">
+      <input type="file" id="imageInput" accept="image/*">
+      <div id="dropText" style="display: none;">Drag & drop your image here or click to browse</div>
+    </div>
+    
+    <!-- Settings -->
+    <div class="settings-grid">
+      <div>
+        <label for="sizeSelect">Target Size:</label>
+        <select id="sizeSelect">
+          <option value="80">80KB</option>
+          <option value="100">100KB</option>
+          <option value="200" selected>200KB</option>
+          <option value="300">300KB</option>
+          <option value="400">400KB</option>
+          <option value="custom">Custom...</option>
+        </select>
+        <input type="number" id="customSizeInput" placeholder="Custom size in KB" style="display: none;">
+      </div>
+      
+      <div>
+        <label for="formatOptions">Output Format:</label>
+        <div class="format-options" id="formatOptions">
+          <div class="format-option active" data-format="jpeg">JPEG</div>
+          <div class="format-option" data-format="png">PNG</div>
+          <div class="format-option" data-format="webp">WebP</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="settings-grid">
+      <div>
+        <label for="widthInput">Custom Width (px):</label>
+        <input type="number" id="widthInput" placeholder="Auto">
+      </div>
+      
+      <div>
+        <label for="heightInput">Custom Height (px):</label>
+        <input type="number" id="heightInput" placeholder="Auto">
+      </div>
+    </div>
+    
+    <!-- Quality Control (for JPEG and WebP) -->
+    <div id="qualityControl">
+      <label for="qualitySlider">Quality: <span id="qualityValue">80%</span></label>
+      <input type="range" id="qualitySlider" class="quality-slider" min="10" max="100" value="80">
+    </div>
+    
+    <!-- Compress Button -->
+    <button id="compressBtn">Compress Image</button>
+    
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+      <div class="progress-bar-inner"></div>
+    </div>
+    
+    <!-- File Size Display -->
+    <div class="file-size">
+      <span>Original: <span id="originalSize">0 KB</span></span>
+      <span>Reduction: <span id="reductionPercent">0%</span></span>
+      <span>Compressed: <span id="compressedSize">0 KB</span></span>
+    </div>
+    
+    <!-- Image Preview -->
+    <div class="preview-container">
+      <div class="preview-box">
+        <div class="preview-label">Original</div>
+        <img id="originalPreview" src="#" alt="Original Preview" style="display: none;">
+        <div id="originalDimensions" class="file-size" style="display: flex; justify-content: center;"></div>
+      </div>
+      
+      <div class="preview-box">
+        <div class="preview-label">Compressed</div>
+        <img id="compressedPreview" src="#" alt="Compressed Preview" style="display: none;">
+        <div id="compressedDimensions" class="file-size" style="display: flex; justify-content: center;"></div>
+      </div>
+    </div>
+    
+    <!-- Download Link -->
+    <div style="text-align: center; margin-top: 20px;">
+      <a id="downloadLink" class="download-button" style="display:none;">Download Compressed Image</a>
+    </div>
+    
+    <!-- Information -->
+    <div class="info">
+      <h3>About This Tool</h3>
+      <p>This tool compresses images while maintaining visual quality. You can resize, change format, and adjust compression settings to get the optimal result for your needs.</p>
+      <p><strong>Tips:</strong></p>
+      <ul>
+        <li>JPEG is best for photos</li>
+        <li>PNG is best for graphics with transparency</li>
+        <li>WebP offers good compression for both photos and graphics</li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- FAQ Section -->
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+      <h3>Will my image lose quality after compression?</h3>
+      <p>Our tool uses advanced compression techniques to minimize quality loss while reducing file size.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is my data safe?</h3>
+      <p>Yes! Your images are processed locally in your browser and never uploaded to our servers.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I compress multiple images at once?</h3>
+      <p>Currently, the tool supports single-image compression. For bulk compression, upload images one by one.</p>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer>
+    <p>Need help? Contact us at ✉️ syntaxamit@proton.me</p>
+  </footer>
+  
+  <div class="footer">
+    <h3>
+      made by <a href="https://www.instagram.com/amitgajare_">Amit Gajare</a>
+    </h3>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+
+</html>
